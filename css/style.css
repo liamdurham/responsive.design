@@ -1,0 +1,434 @@
+#wrapper {
+   max-width: 1200px; 
+   margin: 0 auto;
+   margin-top: 5px;
+   background-color: #efefef;
+}
+h1,h2,h3,h4,h5,h6{
+font-family: 'Oswald', sans-serif;
+font-weight:normal;
+}
+
+thead th,
+tbody th{
+font-family: Arial, Verdana, sans-serif;
+}
+
+h1 {
+    font-size:48pt;
+    font-weight:bolder;
+}
+
+h4 {
+    font-size:24pt;
+    font-weight:normal;
+}
+
+button,
+a.btn,
+input[type="submit"],
+input[type="reset"],
+input[type="button"]{
+font-family: Arial, Verdana, sans-serif;
+}
+
+.menu{
+font-family: Arial, Verdana, sans-serif;
+}
+
+blockquote{
+font-family: Arial, Verdana, sans-serif;
+}
+
+/*---------------------------------
+	LAYOUT
+-----------------------------------*/
+body{
+margin:0;
+padding:0 0 0 0;
+color:#000;
+background:#efefef;
+font:normal 0.9em/150% 'Oswald', Verdana, sans-serif;
+text-shadow: 0 0 1px transparent; /* google font pixelation fix */
+}
+
+#wrap{
+width:100%;
+background:#fff;
+margin:30px auto 30px auto;
+padding:0 2%;
+border:1px solid #ccc;
+} 
+
+
+#footer{
+text-align:center;
+padding:20px;
+margin:0;
+border-top:1px solid #ddd;
+color:#999;
+font-size:0.8em;
+text-shadow:0px 1px 1px #fff;
+position: relative;
+top:0;
+left:0;
+background:#fff;
+}
+
+	#link-top{
+	display:none;
+	}
+
+/* NAV BAR*/
+.navbar{
+position:fixed;
+top:0;
+left:0;
+width: 100%;
+background:#000;
+color:#fff;
+z-index:1000;
+}
+
+	#logo{
+	position:relative;
+	top:0;
+	left:0;
+    max-width: 150px;    
+	color:#efefef;
+	text-decoration:none;
+	}
+
+	.navbar span{
+	color:#86dc00;
+	}
+
+
+	.navbar ul{
+	display:inline-block;
+	margin:0;
+	padding:0;
+	}
+
+		.navbar li{
+		margin:0;
+		padding:0;
+		list-style-type:0;
+		display:inline-block;
+		}
+
+		.navbar li a{
+		display:inline-block;
+		color:#efefef;
+		padding:1em 1.3em;
+		text-decoration:none;
+		text-transform: uppercase;
+		line-height:100%;
+		font-size: 1.2em;
+		}
+
+.callout{
+background:#4598ef;/*#86dc00;*/
+padding:3em 0;
+color:#fff;
+box-shadow:inset 0 0 10px rgba(0,0,0,0.2);
+text-align: center;
+text-shadow:0px 1px 3px rgba(0,0,0,0.2);
+display:block;
+}
+	.callout + div.grid{margin-top:50px;}
+	 a.callout{cursor:pointer;}
+	 .callout i.icon-4x{font-size:6em;}
+	 .callout h4{margin-bottom:30px;}
+	 .callout-top{margin:50px 0 0 0;}
+	 .callout p{margin-bottom:0;}
+	 .callout .button{margin-top:10px;}
+	 .callout.green{background:#19ad0b;/*#86dc00;*/}
+
+#mc_embed_signup{
+padding:30px 0;
+}
+
+#ui-preview{
+border:5px solid #ddd;
+margin:30px 0;
+display:block;
+}
+
+
+
+
+/* Custom */
+
+div.imgView
+    { height: 300px; align-content: center; text-align: center; }
+div.imgView img 
+    { height: 300px; }
+div.imgRow
+    { height: 300px; align-content: center; text-align: center; }
+div.imgRow img 
+    { height: 100px; }
+div.stateInfo 
+    { margin: 35px auto; font-size: 22pt; text-align: center; }
+
+table {
+    font-family: Oswald, sans-serif;
+    width: 100%;
+    font-size: 125%;
+    margin-bottom: 200px;
+}
+ 
+footer {
+    clear: both;
+    background-color:#efefef;
+    text-align: center;
+    font-size:85%;
+    min-height:100px; 
+}
+footer p {
+    display: block;
+    padding: 20px;
+}
+.menu { 
+  position: relative;
+  top: 34.5%;
+  display:inline-block;
+  color:#efefef;
+  padding:.5em 1.2em;
+  text-decoration:none;
+  text-transform: uppercase;
+  line-height:100%;
+  font-size: 1.2em;
+}
+nav ul li:hover ul a:hover,
+nav ul li.hover ul a:hover,
+nav ul li.hover ul a:focus,
+nav ul li.hover ul a:active { 
+  background-color: #4598ef;
+  color: black;
+}
+nav ul li:hover,
+nav ul li:focus,
+nav ul li:active,
+nav ul li.hover {
+    color: black;
+}
+
+ nav li:hover ul,
+nav li.hover ul  {
+    transition: all 1s ease-out;
+    display: block;
+    position: absolute;
+	float: none;
+}  
+.cols { 
+   /*-webkit-column-count: 3;
+     -moz-column-count: 3;
+          column-count: 3;
+    -webkit-column-gap: 10px;
+       -moz-column-gap: 10px;
+            column-gap: 10px; */ 
+   -webkit-column-width: 200px; 
+   -moz-column-width: 200px;
+          column-width: 200px; 
+        }
+.cols-span { 
+        -webkit-column-span: all; 
+        -moz-column-span: all;
+        column-span: all;
+        font-size: 1.2em;
+        margin-bottom: 0.2em;
+        line-height: 1.2em; 
+        } 
+.cols p {
+        margin-bottom: 1.1em;
+        text-align: justify; 
+        } 
+.lead {
+        font-family: Georgia;
+        font-size: 1.3em;
+        text-align: left;
+        font-style: italic; 
+        }
+aside {
+    max-width: 150px; 
+    min-width: 150px; 
+    margin-right: 25px;
+    float: left;
+    color: #4598ef;
+    text-align: center;
+}
+aside p {
+    padding: 0px 20px; 
+}
+section {
+    padding: 10px; 
+    float: left;
+    max-width: 65%; 
+}
+article {
+    padding-left:1.5em; 
+}
+article p {
+    padding-left:1.5em; 
+}
+
+      
+
+/* ********************* Slider ********************** */
+/* New in version 1.7+ */ 
+#slider3 {
+  width: 99%;
+  height: 400px;
+  list-style: none; 
+} 
+/* images with caption */ 
+#slider3 img {
+  width: 100%;
+  height: 100%; 
+} 
+/* position the panels so the captions appear correctly */ 
+#slider3 .panel {
+position: relative; 
+} 
+/* captions */ 
+#slider3 .caption-top, #slider3 .caption-right, #slider3 .caption-bottom, #slider3 .caption-left {
+  background:#000;
+  color: #fff;
+  padding: 10px;
+  margin: 0;
+  position: relative;
+  z-index: 10;
+  opacity: 0.8;
+  filter: alpha(opacity=80); 
+} 
+/* Top caption - padding is included in the width (480px here, 500px in the script), same for height */ 
+#slider3 .caption-top {
+  left: 0;
+  top: 0;
+  width: 480px;
+  height: 30px; 
+}
+/* Right caption - padding is included in the width (130px here, 150px in the script), same for height */ 
+#slider3 .caption-right {
+  right:0;
+  bottom:0;
+  width:130px;
+  height:180px; 
+} 
+/* Bottom caption - padding is included in the width (480px here, 500px in the script), same for height */ 
+#slider3 .caption-bottom {
+  left:0;
+  bottom:0;
+  width:480px;
+  height:30px; 
+} 
+/* Left caption - padding is included in the width (130px here, 150px in the script), same for height */ 
+#slider3 .caption-left {
+  left: 0;
+  bottom: 0;
+  width:130px;
+  height:180px; 
+} 
+/* Caption close button */ 
+.caption-top .close, .caption-right .close, .caption-bottom .close, .caption-left .close {
+  font-size: 80%;
+  cursor: pointer; 
+  float: right;
+  display:inline-block; 
+}
+.video {
+   float: left;
+  padding: 5px;
+  margin-top: 10px; 
+}
+
+/*** RESPONSIVE */
+
+@media screen and (max-width:1100px){
+  header { max-height:150px;}
+  header h1 {font-size:1.5em;}
+  menu { position: relative; top:34px; left:-25px;}
+  menu ul li a { font-size:90%;}
+  section {float: none;}
+  aside {float: none; max-width:100%;}
+}
+
+@media screen and (max-width:760px){
+#wrapper {
+  margin:0; 
+  padding:0; 
+  width:auto;
+}
+.header {
+  max-height:150px; 
+  background-size:100%;
+}
+.header h1 {
+  font-size:1.5em;
+}
+.menu {
+    text-align: center;
+    display: inline-block;
+    max-width: 225px;
+}  
+.menu li {
+ display: block;
+z-index: 1000;
+width: 100%;
+float: left;
+    
+white-space: nowrap;    
+}
+.menu li ul, .menu li ul a {
+  text-align: right; 
+  z-index: 100;
+  position: relative;
+  float: none;
+}
+menu li:not(:hover) ul {
+  left: auto;
+  visibility: hidden;  
+}
+.menu li:hover ul,
+.menu li.hover ul  {
+    float: none;
+    max-width: 225px;
+    overflow: wrap;
+    font-size: 24pt;
+    display: block;
+    margin: 0 -3px 0 0;
+    position: absolute;
+    left: 175px;
+    top: 0;
+    z-index: 1001;    
+}
+.menu li:hover {   
+}
+.section article {
+    padding-top: 50px;
+    }
+.aside {
+  float:none; 
+  max-width:100%; 
+  min-height:0%; 
+  padding-bottom:1%;
+}
+.section {
+  float: none; 
+  max-width:80%;
+}
+}
+.collapsing {
+    -webkit-transition: none;
+    transition: none;
+    display: none;
+}
+.no-transition {
+  -webkit-transition: height 0;
+  -moz-transition: height 0;
+  -ms-transition: height 0;
+  -o-transition: height 0;
+  transition: height 0;
+    display: none;
+}     
