@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- Metadata -->
+	<title>David Anderson | Site Template.</title>
+	<meta charset="UTF-8">
+	<meta name="author" content="David Anderson"/>
+	<meta name="description" content="A portfolio of HTML5 web graphics and canvas animation." />
+	<meta name="keywords" content="WGD235,HTML5, web graphics, animations" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	
+	<!-- CSS -->
+	<link rel="stylesheet" type="text/css" href="css/kickstart.css" media="all" />
+	<link rel="stylesheet" type="text/css" href="css/style.css" media="all" /> 
+    <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+	
+	<!-- JavaScript -->
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/kickstart.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() 
+                          {
+    $("nav").accessibleDropDown();
+        // nav hover
+            $('nav ul li a').hover(
+        function() {
+            $(this).stop().animate(  //
+                {
+                    paddingRight: '2em'
+                }, 1000 );
+            },
+        function() {
+            $(this).stop().animate(
+                {
+                   paddingRight: '1.5em'
+                }, 1000 );
+        }); // end nav hover
+        });  
+        $.fn.accessibleDropDown = function() 
+        {
+    var el = $(this);
+    $("a", el).focus(function() 
+                     {
+        $(this).parents("li").addClass("hover");
+    }).blur(function() 
+            {
+        $(this).parents("li").removeClass("hover");
+    });
+}
+    </script>
+</head>
+
+<body>
+<div class="grid" id="wrapper">
+ <header>
+       <aside> <img id="logo" src="images/logo.PNG" alt="Havok LTL, LLC"/></aside>
+  <nav>
+
+    <ul class="menu">
+      <li class="current"><a href="index.html">Home</a></li>
+     <li><a href="about.html">Havok LTL, LLC</a>
+        <ul>
+                      <li><a href="contact.html">Contact Us</a></li>
+                      <li><a href="staff.html">Our Staff</a></li>
+                      <li><a href="vision.html">The Havok LTL Vision</a></li>
+        </ul>
+    </li>
+        <li><a href="#">Our Product</a>
+                  <ul>
+                      <li><a href="product.html">Gen 2 Havok</a></li>
+                      <li><a href="oldproduct.html">Gen 1 Havok</a></li>
+                      <li><a href="techinfo.html">Technical Information</a></li>
+                      <li><a href="retail.html">Local Retailers</a></li>
+                 </ul>
+        </li>
+          <li><a href="training.html">Training Classes</a></li>
+          <li><a href="testimonials.html">Testimonials</a>
+    </ul>
+  </nav>
+</header>
+ <main>
+    <aside>
+       <ul>
+           <p> <a href="ltl.html">What is LTL?</a></p>
+           <p> <a href="police.html">Police Orders</a></p>
+           <p> <a href="w5_lab.html">Week 5 Lab</a></p>
+           <p> <a href="legal.html">Legal Information</a></p>
+           <p> <a href="postmortem.html">WGD242 Post Mortem</a></p>
+        </ul>
+    </aside>
+        <section>
+            <article>
+            <h1>WGD 242 Post Mortem</h1>  
+            <h2 class="cols-span">A long week...</h2>
+        <p class="lead cols-span"> In this course, I further learned jQuery html control, as well as methods of combining jQuery and CSS to create animated or responsive behaviors. In addition, full page scrolls are something that I have never before attempted, and thus have been added to my repertoire. I have used many forms, but in-depth form validation is fairly new to me. I appreciate the many things I have discovered in this class. </p>
+            &nbsp;
+            <h2 class="cols-span">Theme choices</h2>
+        <p class="lead cols-span">Building blocks?.</p>
+        <p>My theme choices revolved around a fictional company called Havok Less Than Lethal. For this company, a standard social-esque blue has a doubling  effect as a police-support message. My navigation includes a menu system and a sidebar (though I still don't like side bars, I find them clunky). The images in my slider are the business logo I created, a picture of Less than Lethal weapons, and a fictional LTL taser-like underbarrel attachment, which is what this company attempts to sell. Decisions for UX/UI were made with best practice in mind, such as the horizontal "fly-out" mobile menu and at-the-top logo placement. Form responses were chosen in-character as a small but growing company catering mostly to police and government orders.</p>
+                &nbsp;
+            <h2 class="cols-span">Lab Locations</h2>
+        <p class="lead cols-span">Slider: Index. Form: Contact. Hidden Image: What is LTL. Full page scroller: Week 5 Lab. Most other labs involve significant parts of the site, including the media responsivness and menu. As I was creating a full website, I did not keep these labs seperate from the main and final project, instead building them in to the website as I went. </p>
+            </article>
+     </section>   
+    </main>
+   <footer>
+           <div id="minidash">
+            <a href="#"><img src="icons/fb_sm.jpg"  width="32" height="32" title="Follow on Facebook"></a>
+            <a href="#"><img src="icons/g+_sm.jpg"  width="32" height="32" title="Add to Circles on Google+"></a>
+            <a href="#"><img src="icons/ttr_sm.jpg" width="32" height="32" title="Follow on Twitter"></a>
+            <a href="#"><img src="icons/ln_sm.jpg"  width="32" height="32" title="Add on LinkedIn"></a>
+            <a href="#"><img src="icons/ig_sm.jpg"  width="32" height="32" title="Follow on Instagram"></a>
+            <a href="#"><img src="icons/pnt_sm.jpg" width="32" height="32" title="Follow on Pinterest"></a>
+            <a href="#"><img src="icons/yt_sm.jpg"  width="32" height="32" title="Subscribe to our YouTube Channel"></a>
+        </div>
+     <p>© Copyright 2017. Developed by David Anderson for WGD242. All Rights Reserved.</p>
+   </footer>
+ </div> <!-- End Grid -->
+</body>
+</html>

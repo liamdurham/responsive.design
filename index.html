@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- Metadata -->
+	<title>David Anderson | Site Template.</title>
+	<meta charset="UTF-8">
+	<meta name="author" content="David Anderson"/>
+	<meta name="description" content="A portfolio of HTML5." />
+	<meta name="keywords" content="WGD235,HTML5, web graphics, animations" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	
+	<!-- CSS -->
+	<link rel="stylesheet" type="text/css" href="css/kickstart.css" media="all" />
+    <link href="css/anythingslider.css" rel="stylesheet">
+    <link href="css/theme-metallic.css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="css/style.css" media="all" /> 
+    <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+	
+	<!-- JavaScript -->
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/kickstart.js"></script>
+    <script src="js/jquery.anythingslider.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() 
+                          {
+    $("body").accessibleDropDown();
+            // Slider
+    $('#slider3').anythingSlider({
+                theme           :'metallic',
+                expand          :false,
+                resizeContents  :true,
+                aspectRatio     :true,
+                showMultiple    :1,
+                changeBy        :1,
+                startPanel      :1,
+                autoPlay        :true
+        })
+        .find('.panel')
+        .find('div[class*=caption]').css(
+        {  
+	   position:'absolute'
+        })
+        .end()
+        .hover(function() { 
+	   showCaptions( $(this));
+    },
+               function() { 
+        hideCaptions( $(this));
+    });  // end slider
+        // Caption Config
+        showCaptions = function(el){
+        var $this = el;
+        if ($this.find('.caption-bottom').length) {
+            $this.find('.caption-bottom')
+            .show()
+            .animate({ bottom: 0, opacity: 1 }, 400);
+        }
+    };
+    hideCaptions = function(el){
+    var $this = el;
+    if ($this.find('.caption-bottom').length) {
+      $this.find('.caption-bottom')
+        .stop()
+        .animate({ bottom: -50, opacity: 0 }, 350, function(){
+          $this.find('.caption-bottom').hide(); });
+        }
+    };
+    hideCaptions( $('#slider3 .panel') );
+            // End caption config
+            // nav hover
+            $('nav ul li a').hover(
+        function() {
+            $(this).stop().animate(  //
+                {
+                    paddingRight: '2em'
+                }, 1000 );
+            },
+        function() {
+            $(this).stop().animate(
+                {
+                   paddingRight: '1.5em'
+                }, 1000 ); 
+        }); // end nav hover 
+        });  
+        $.fn.accessibleDropDown = function() 
+        {
+    var el = $(this);
+    $("a", el).focus(function() 
+                     {
+        $(this).parents("li").addClass("hover");
+    }).blur(function() 
+            {
+        $(this).parents("li").removeClass("hover");
+    });
+}
+
+</script>
+</head>
+
+<body>
+<div class="grid" id="wrapper">
+ <header>
+     <aside> <img id="logo" src="images/logo.PNG" alt="Havok LTL, LLC"/></aside>
+  <nav>
+    <ul class="menu" >
+      <li class="current"><a href="index.html">Home</a></li>
+     <li><a href="about.html">Havok LTL, LLC</a>
+        <ul>
+                      <li><a href="contact.html">Contact Us</a></li>
+                      <li><a href="staff.html">Our Staff</a></li>
+                      <li><a href="vision.html">The Havok LTL Vision</a></li>
+        </ul>
+    </li>
+        <li><a href="#">Our Product</a>
+                  <ul class="collapsing">
+                      <li><a href="product.html">Gen 2 Havok</a></li>
+                      <li><a href="oldproduct.html">Gen 1 Havok</a></li>
+                      <li><a href="techinfo.html">Technical Information</a></li>
+                      <li><a href="retail.html">Local Retailers</a></li>
+                 </ul>
+        </li>
+        <li><a href="training.html">Training Classes</a></li>
+        <li><a href="testimonials.html">Testimonials</a>
+    </ul>
+  </nav>
+</header>
+ <main>
+    <aside>
+        <ul>
+           <p> <a href="ltl.html">What is LTL?</a></p>
+           <p> <a href="police.html">Police Orders</a></p>
+           <p> <a href="w5_lab.html">Week 5 Lab</a></p>
+           <p> <a href="legal.html">Legal Information</a></p>
+            <p> <a href="postmortem.html">WGD242 Post Mortem</a></p>
+        </ul>
+    </aside>
+        <section>
+            <article>
+    <ul id="slider3">
+    <li>
+
+    <div class="caption-bottom">
+            Havok V1 - Trusted since 2012
+    </div>
+    <a href="product.html"> 
+    <img src="images/undertaser.jpg"alt=""></a>
+    </li>
+    <li>
+    <a href="ltl.html">
+        <img src="images/ltl.jpg" alt=""></a>
+    <div class="caption-bottom">
+            Less than Lethal - Saving lives by providing options 
+    </div>
+    </li>
+    <li>
+    <a href="about.html"><img src="images/logo.PNG"alt=""></a>
+    <div class="caption-bottom">
+            Havok LTL, LLC - Mission Statement
+    </div>
+    </li>
+    </ul>
+            &nbsp;
+            <h2 class="cols-span">Lorem ipsum dolor sit amet</h2>
+        <p class="lead cols-span">Proin ultrices urna enim, non egestas tellus tincidunt ac.</p>
+        <p>Praesent vitae nisi purus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. In vulputate risus mollis magna pulvinar, sed ornare erat aliquam. Proin ultrices urna enim, non egestas tellus tincidunt ac. Nulla placerat leo a orci mollis, at interdum sem semper. Ut efficitur, tortor vel molestie vulputate, sem felis efficitur eros, vel dictum sem nibh eget massa. Suspendisse placerat arcu eget neque vulputate, a pulvinar augue tempus. Donec porttitor arcu sit amet nulla condimentum malesuada. Cras euismod faucibus nisi, at lobortis nibh convallis vitae.</p>
+            </article>
+     </section>   
+    </main>
+   <footer>
+                   <div id="minidash">
+            <a href="#"><img src="icons/fb_sm.jpg"  width="32" height="32" title="Follow on Facebook"></a>
+            <a href="#"><img src="icons/g+_sm.jpg"  width="32" height="32" title="Add to Circles on Google+"></a>
+            <a href="#"><img src="icons/ttr_sm.jpg" width="32" height="32" title="Follow on Twitter"></a>
+            <a href="#"><img src="icons/ln_sm.jpg"  width="32" height="32" title="Add on LinkedIn"></a>
+            <a href="#"><img src="icons/ig_sm.jpg"  width="32" height="32" title="Follow on Instagram"></a>
+            <a href="#"><img src="icons/pnt_sm.jpg" width="32" height="32" title="Follow on Pinterest"></a>
+            <a href="#"><img src="icons/yt_sm.jpg"  width="32" height="32" title="Subscribe to our YouTube Channel"></a>
+        </div>
+     <p>© Copyright 2017. Developed by David Anderson for WGD242. All Rights Reserved. https://github.com/CSS-Tricks/AnythingSlider/ </p>
+   </footer>
+ </div> <!-- End Grid -->
+</body>
+</html>

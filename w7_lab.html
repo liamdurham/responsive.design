@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- Metadata -->
+	<title>David Anderson | Site Template.</title>
+	<meta charset="UTF-8">
+	<meta name="author" content="David Anderson"/>
+	<meta name="description" content="A portfolio of HTML5 web graphics and canvas animation." />
+	<meta name="keywords" content="WGD235,HTML5, web graphics, animations" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	
+	<!-- CSS -->
+	<link rel="stylesheet" type="text/css" href="css/kickstart.css" media="all" />
+	<link rel="stylesheet" type="text/css" href="css/style.css" media="all" /> 
+    <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+	
+	<!-- JavaScript -->
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/kickstart.js"></script>
+     <script type="text/javascript">
+        $(document).ready(function() 
+                          {
+    $("nav").accessibleDropDown();
+                        $('nav ul li a').hover(
+        function() {
+            $(this).stop().animate(  //
+                {
+                    paddingRight: '2.5em'
+                }, 1000 );
+            },
+        function() {
+            $(this).stop().animate(
+                {
+                   paddingRight: '1.2em'
+                }, 1000 );
+        }); // end nav hover
+        });  
+        $.fn.accessibleDropDown = function() 
+        {
+    var el = $(this);
+    $("a", el).focus(function() 
+                     {
+        $(this).parents("li").addClass("hover");
+    }).blur(function() 
+            {
+        $(this).parents("li").removeClass("hover");
+    });
+}
+function validForm(){
+    var fname = document.form1.fname;
+    var email = document.form1.email;
+    var emailRegex =/^([A-Z0-9._%+-]+)\@([A-Z0-9.-]+)\.([A-Z]{2,4})$/i;
+    var comments = document.form1.comments;
+    var phone1 = document.form1.phone1;
+    var phone2 = document.form1.phone2;
+    var phone3 = document.form1.phone3;
+    var fnErr = document.getElementById('fnErr');
+    var lnErr = document.getElementById('lnErr');
+    var emErr = document.getElementById('emErr');
+    var phErr = document.getElementById('phErr');
+    var cmErr = document.getElementById('cmErr');
+ if(fname.value=="") {
+        fnErr.innerHTML = "We need your name, please.";
+        fname.focus();
+        return false;
+    } else {
+        fnErr.innerHTML = "";    
+    if(email.value=="" ) 
+       {
+emErr.innerHTML="We need an email address, thanks.";
+email.focus();
+        returnfalse;
+    }
+    else if(!emailRegex.test(email.value))
+        {
+email.focus();
+emErr.innerHTML = "enter a valid email address, thank you!";
+email.focus();returnfalse;
+    }
+    else{
+emErr.innerHTML="";
+}
+}
+if(isNaN(phone1.value) || isNaN(phone2.value) || isNaN(phone3.value)) {
+        phErr.innerHTML = "If you include a phone number it should be numbers only.";
+        phone1.select();
+        return false;
+    } else {
+        phErr.innerHTML = "";
+    }
+    if(comments.value == "") {
+        cmErr.innerHTML = "Please include a comment or 'none' in the comment box.";
+        comments.focus();
+        return false;
+    } else {
+        cmErr.innerHTML = "";
+    } 
+    var gtrType = document.getElementById('guitarType');
+    var gtErr = document.getElementById('gtErr');
+    var i = gtrType.selectedIndex;
+    var gtrValue= gtrType.options[i].text;
+    if (gtrValue === "-- Please Select --") {
+        gtErr.innerHTML = "Please choose a guitar type.";
+         return false;
+    } else {
+         gtErr.innerHTML = "";
+    }
+    var interest = document.getElementById('interest');
+    var inErr = document.getElementById('inErr');
+    var si = interest.selectedIndex;
+    var inValue = interest.options[si].text;
+    if(inValue === "-- Please Select --") {
+        inErr.innerHTML = "Please select your interests.";
+        return false;    
+} else {
+        inErr.innerHTML = "";
+    }
+    var notices = document.form1.notices;
+    var selected;
+    for(var i=0;i<notices.length;i++) {
+        if(notices[i].checked) {
+        selected = notices[i].value;  
+        }
+    }
+	/* set up a message for a advert recipient */
+   var msg = "Thank you, <b>"+fname.value
+	+"!</b> Your message has been received and one of our representatives will reply to <a href='"
+	+email.value+"'>"+email.value+"</a> within a day or two. Relax, and enjoy the rest of the site!";
+if(selected != undefined) {
+        document.getElementById('notePref').innerHTML = "";
+        if (selected == "yes") { 
+            document.getElementById('fnlMsg').innerHTML = msg;
+        } else {
+            document.getElementById('fnlMsg').innerHTML = "<strong>"+fname.value+"</strong>, thank you for your feedback!";
+        } 
+         var contactForm = document.getElementById('contactForm').setAttribute('class','hide');
+         var loseSep = document.getElementsByClassName('spec');
+         loseSep[0].setAttribute('class', 'hide');
+    } else {
+        document.getElementById('notePref').innerHTML = "Please make a selection:";
+    }
+    
+}
+</script>
+    
+<style type="text/css">
+          form {
+    max-width:500px;
+}
+input {
+    margin-left:20px;
+    width:150px;
+    border-radius:5px;
+}
+    input[type="tel"] {
+    width:48px;
+}
+.shortmargin {
+    margin-left: 7px;
+}
+        .adj {
+    margin-left:20px;
+    width:250px;
+    border-radius:5px;
+    box-shadow:-1px 0 1px rgba(0,0,0,0.6); 
+}
+        input[type="radio"] {
+    width:30px; 
+}
+        input, textarea, select {
+    margin-top:7px;
+    padding:3px; 
+}
+.err {
+    font-style: italic;
+    color: red; 
+}
+.hide {
+    display: none;
+}
+    </style>
+</head>
+
+<body>
+<div class="grid" id="wrapper">
+ <header>
+       <aside> <img id="logo" src="images/logo.PNG" alt="Havok LTL, LLC"/></aside>
+  <nav>
+
+    <ul class="menu">
+      <li><a href="index.html">Home</a></li>
+     <li><a href="about.html">Havok LTL, LLC</a>
+        <ul>
+                      <li class="current"><a href="contact.html">Contact Us</a></li>
+                      <li><a href="staff.html">Our Staff</a></li>
+                      <li><a href="vision.html">The Havok LTL Vision</a></li>
+        </ul>
+    </li>
+        <li><a href="#">Our Product</a>
+                  <ul>
+                      <li><a href="product.html">Gen 2 Havok</a></li>
+                      <li><a href="oldproduct.html">Gen 1 Havok</a></li>
+                      <li><a href="techinfo.html">Technical Information</a></li>
+                      <li><a href="retail.html">Local Retailers</a></li>
+                      <li><a href="legal.html">Legal Information</a></li>
+                 </ul>
+        </li>
+          <li><a href="training.html">Training Classes</a></li>
+          <li><a href="testimonials.html">Testimonials</a>
+    </ul>
+  </nav>
+</header>
+ <main>
+    <aside>
+        <ul>
+           <p> <a href="ltl.html">What is LTL?</a></p>
+           <p> <a href="police.html">Police Orders</a></p>
+           <p> <a href="civilian.html">Civilian Orders</a></p>
+           <p> <a href="legal.html">Legal Information</a></p>
+        </ul>
+    </aside>
+        <section>
+            <article>
+   <h2>Contact Us!</h2>
+   <p>We welcome your comments and questions about our products!
+       If you would like to 
+       correspond with our knowledgeable staff, or if you would like to receive our 
+       newsletter, fill in the form with your contact information and preferences. 
+       We can't wait to hear from you!</p>
+            </article>
+            <h3 class="spec"> </h3>
+            <article id="contactForm">
+                <h2>Contact Form</h2>
+                <p class="lead">
+                <form method="post" action="" name="form1">
+                    <p>First Name: <br>
+                        <input type="text" name="fname" placeholder=" first name"><br>
+                        <span class="err" id="fnErr"></span>
+                        <p>Last Name:  <br>
+        <input type="text" name="lname" placeholder=" last  name"><br>
+                            <span class="err" id="lnErr"></span></p>
+                    <p>Email:        <br>
+                        <input type="text" name="email" placeholder=" you@youremail.com"><br>
+                        <span class="err" id="emErr"></span>
+                    <p>Phone:      <br>
+   <input type="tel" name="phone1" placeholder=" XXX"  maxlength="3">
+<input type="tel" name="phone2" placeholder=" XXX"  maxlength="3" class="shortmargin">
+<input type="tel" name="phone3" placeholder=" XXXX" maxlength="4" class="shortmargin"><br>
+<span class="err" id="phErr"></span>
+</p>
+        <p>Comments: <br>
+        <textarea name="comments" placeholder=" add your comments" class="adj"></textarea>
+<span class="err" id="cmErr"></span>
+</p>
+<p>Are you involved in public saftey or the military?:</p>
+<span id="gtErr" class="err"></span>
+<select id="guitarType"class="adj">
+   <option>-- Please Select --</option>
+   <option>No</option>
+   <option>Military</option>
+   <option>Police</option>
+   <option>Federal Agency</option>
+   <option>Other</option>
+</select>
+<p>I am interested in:<br>
+<span id="inErr" class="err"></span>
+<select id="interest" class="adj">
+   <option>-- Please Select --</option>
+   <option>Havok Products</option>
+   <option>Large Purchases</option>
+   <option>More Information</option>
+   <option>Contacting a Representative</option>
+   <option>Other</option>
+</select></p>
+<p>Would you like to receive notifications via email?<br>
+<span class="err" id="notePref"></span>
+   <input type="radio" name="notices" value="yes">: Yes!
+   <input type="radio" name="notices" value="maybe">: Not Yet.
+   <input type="radio" name="notices" value="no">: No Thanks.
+</p>
+                    <p><input type="button" value="Send Information" onclick="validForm()">
+</p>
+                </form>
+            </article>
+     </section>   
+    </main>
+   <footer>
+       <div id="minidash">
+            <a href="#"><img src="icons/fb_sm.jpg"  width="32" height="32" title="Follow on Facebook"></a>
+            <a href="#"><img src="icons/g+_sm.jpg"  width="32" height="32" title="Add to Circles on Google+"></a>
+            <a href="#"><img src="icons/ttr_sm.jpg" width="32" height="32" title="Follow on Twitter"></a>
+            <a href="#"><img src="icons/ln_sm.jpg"  width="32" height="32" title="Add on LinkedIn"></a>
+            <a href="#"><img src="icons/ig_sm.jpg"  width="32" height="32" title="Follow on Instagram"></a>
+            <a href="#"><img src="icons/pnt_sm.jpg" width="32" height="32" title="Follow on Pinterest"></a>
+            <a href="#"><img src="icons/yt_sm.jpg"  width="32" height="32" title="Subscribe to our YouTube Channel"></a>
+        </div>
+     <p>© Copyright 2017. Developed by David Anderson for WGD242. All Rights Reserved.</p>
+   </footer>
+ </div> <!-- End Grid -->
+</body>
+</html>

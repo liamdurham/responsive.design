@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   	<!-- Metadata -->
+	<title>David Anderson | Site Template.</title>
+	<meta charset="UTF-8">
+	<meta name="author" content="David Anderson"/>
+	<meta name="description" content="A portfolio of HTML5." />
+	<meta name="keywords" content="WGD235,HTML5, web graphics, animations" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	
+	<!-- CSS -->
+	<link rel="stylesheet" type="text/css" href="css/kickstart.css" media="all" />
+    <link href="css/theme-metallic.css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="css/style.css" media="all" /> 
+    <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+	
+	<!-- JavaScript -->
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/kickstart.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() 
+                          {
+    $("nav").accessibleDropDown();
+         // nav hover
+            $('nav ul li a').hover(
+        function() {
+            $(this).stop().animate(  //
+                {
+                    paddingRight: '2em'
+                }, 1000 );
+            },
+        function() {
+            $(this).stop().animate(
+                {
+                   paddingRight: '1.5em'
+                }, 1000 );
+        }); // end nav hover
+        });  
+        $.fn.accessibleDropDown = function() 
+        {
+    var el = $(this);
+    $("a", el).focus(function() 
+                     {
+        $(this).parents("li").addClass("hover");
+    }).blur(function() 
+            {
+        $(this).parents("li").removeClass("hover");
+    });
+}
+
+</script>
+</head>
+<body>
+<div class="grid" id="wrapper">
+ <header>
+       <aside> <img id="logo" src="images/logo.PNG" alt="Havok LTL, LLC"/></aside>
+  <nav>
+
+    <ul class="menu">
+      <li><a href="index.html">Home</a></li>
+     <li><a href="about.html">Havok LTL, LLC</a>
+        <ul>
+                      <li><a href="contact.html">Contact Us</a></li>
+                      <li><a href="staff.html">Our Staff</a></li>
+                      <li><a href="vision.html">The Havok LTL Vision</a></li>
+        </ul>
+    </li>
+        <li><a href="#">Our Product</a>
+                  <ul>
+                      <li class="current"><a href="product.html">Gen 2 Havok</a></li>
+                      <li><a href="oldproduct.html">Gen 1 Havok</a></li>
+                      <li><a href="techinfo.html">Technical Information</a></li>
+                      <li><a href="retail.html">Local Retailers</a></li>
+                      <li><a href="legal.html">Legal Information</a></li>
+                 </ul>
+        </li>
+          <li><a href="training.html">Training Classes</a></li>
+          <li><a href="testimonials.html">Testimonials</a>
+    </ul>
+  </nav>
+</header>
+ <main>
+    <aside>
+       <ul>
+           <p> <a href="ltl.html">What is LTL?</a></p>
+           <p> <a href="police.html">Police Orders</a></p>
+           <p> <a href="w5_lab.html">Week 5 Lab</a></p>
+           <p> <a href="legal.html">Legal Information</a></p>
+           <p> <a href="postmortem.html">WGD242 Post Mortem</a></p>
+        </ul>
+    </aside>
+        <section>
+            <article>
+                <h2>Havok V1</h2> 
+                <p>The First Edition</p> 
+                <p><img class="smImg"src="images/undertaser.jpg">
+                <p>Vestibulum feugiat tortor quis pharetra malesuada. Sed porttitor lorem vitae tellus pulvinar, sed consectetur augue blandit. Nulla facilisi. Integer eu congue sapien. Nulla facilisi. Aenean sed orci magna. Curabitur dapibus sem odio, quis aliquam turpis rhoncus nec. Nunc sollicitudin egestas risus, eu consectetur magna fermentum porta. Ut tempus massa tincidunt, suscipit eros faucibus, eleifend tellus.</p><p>Suspendisse dapibus libero sapien, non efficitur purus pretium eget. Etiam tincidunt et mi ac molestie. Nunc at eros imperdiet, congue mi ut, sollicitudin nunc. Donec eu gravida turpis. Vestibulum faucibus cursus ex non malesuada. Vestibulum at commodo nisl, ac luctus elit. Fusce cursus sem eu nunc ultricies, quis sodales massa consectetur. Aliquam viverra sem at laoreet dapibus. Morbi vel cursus eros.</p>
+            </article>
+            
+            <article class="cols">
+        <h2 class="cols-span">Lorem ipsum dolor sit amet</h2>
+        <p class="lead cols-span">Proin ultrices urna enim, non egestas tellus tincidunt ac.</p>
+        <p>Praesent vitae nisi purus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. In vulputate risus mollis magna pulvinar, sed ornare erat aliquam. Proin ultrices urna enim, non egestas tellus tincidunt ac. Nulla placerat leo a orci mollis, at interdum sem semper. Ut efficitur, tortor vel molestie vulputate, sem felis efficitur eros, vel dictum sem nibh eget massa. Suspendisse placerat arcu eget neque vulputate, a pulvinar augue tempus. Donec porttitor arcu sit amet nulla condimentum malesuada. Cras euismod faucibus nisi, at lobortis nibh convallis vitae.</p>
+            </article>
+        </section>
+    </main>
+    <footer>
+        <div id="minidash">
+            <a href="#"><img src="icons/fb_sm.jpg"  width="32" height="32" title="Follow on Facebook"></a>
+            <a href="#"><img src="icons/g+_sm.jpg"  width="32" height="32" title="Add to Circles on Google+"></a>
+            <a href="#"><img src="icons/ttr_sm.jpg" width="32" height="32" title="Follow on Twitter"></a>
+            <a href="#"><img src="icons/ln_sm.jpg"  width="32" height="32" title="Add on LinkedIn"></a>
+            <a href="#"><img src="icons/ig_sm.jpg"  width="32" height="32" title="Follow on Instagram"></a>
+            <a href="#"><img src="icons/pnt_sm.jpg" width="32" height="32" title="Follow on Pinterest"></a>
+            <a href="#"><img src="icons/yt_sm.jpg"  width="32" height="32" title="Subscribe to our YouTube Channel"></a>
+        </div>
+    <p>Copyright © 2015 All Rights Reserved</p>
+    </footer>
+</div>
+</body>
+</html>
